@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="get-started-with-python-and-scikit-learn-for-regression-models" class="level1">
+<h1>Get started with Python and Scikit-learn for regression models</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../sketchnotes/ml-regression.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Summary of regressions in a sketchnote</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Sketchnote by <a href="https://www.twitter.com/girlie_mac">Tomomi Imura</a></p>
+</blockquote>
+<section id="pre-lecture-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lecture-quiz"><a href="https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/9/">Pre-lecture quiz</a></h2>
+<blockquote class="blockquote">
+<h3 id="this-lesson-is-available-in-r" class="anchored"><a href="./solution/R/lesson_1-R.ipynb">This lesson is available in R!</a></h3>
+</blockquote>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In these four lessons, you will discover how to build regression models. We will discuss what these are for shortly. But before you do anything, make sure you have the right tools in place to start the process!</p>
+<p>In this lesson, you will learn how to:</p>
+<ul>
+<li>Configure your computer for local machine learning tasks.</li>
+<li>Work with Jupyter notebooks.</li>
+<li>Use Scikit-learn, including installation.</li>
+<li>Explore linear regression with a hands-on exercise.</li>
+</ul>
+</section>
+<section id="installations-and-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="installations-and-configurations">Installations and configurations</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://youtu.be/yyQM70vi7V8" title="Setup Python with Visual Studio Code"><img src="https://img.youtube.com/vi/yyQM70vi7V8/0.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Setup Python with Visual Studio Code</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>🎥 Click the image above for a video: using Python within VS Code.</p>
+</blockquote>
+<ol type="1">
+<li><p><strong>Install Python</strong>. Ensure that <a href="https://www.python.org/downloads/">Python</a> is installed on your computer. You will use Python for many data science and machine learning tasks. Most computer systems already include a Python installation. There are useful <a href="https://code.visualstudio.com/learn/educators/installers?WT.mc_id=academic-77952-leestott">Python Coding Packs</a> available as well, to ease the setup for some users.</p>
+<p>Some usages of Python, however, require one version of the software, whereas others require a different version. For this reason, it’s useful to work within a <a href="https://docs.python.org/3/library/venv.html">virtual environment</a>.</p></li>
+<li><p><strong>Install Visual Studio Code</strong>. Make sure you have Visual Studio Code installed on your computer. Follow these instructions to <a href="https://code.visualstudio.com/">install Visual Studio Code</a> for the basic installation. You are going to use Python in Visual Studio Code in this course, so you might want to brush up on how to <a href="https://docs.microsoft.com/learn/modules/python-install-vscode?WT.mc_id=academic-77952-leestott">configure Visual Studio Code</a> for Python development.</p>
+<blockquote class="blockquote">
+<p>Get comfortable with Python by working through this collection of <a href="https://docs.microsoft.com/users/jenlooper-2911/collections/mp1pagggd5qrq7?WT.mc_id=academic-77952-leestott">Learn modules</a></p>
+</blockquote></li>
+<li><p><strong>Install Scikit-learn</strong>, by following <a href="https://scikit-learn.org/stable/install.html">these instructions</a>. Since you need to ensure that you use Python 3, it’s recommended that you use a virtual environment. Note, if you are installing this library on a M1 Mac, there are special instructions on the page linked above.</p></li>
+<li><p><strong>Install Jupyter Notebook</strong>. You will need to <a href="https://pypi.org/project/jupyter/">install the Jupyter package</a>.</p></li>
+</ol>
+</section>
+<section id="your-ml-authoring-environment" class="level2">
+<h2 class="anchored" data-anchor-id="your-ml-authoring-environment">Your ML authoring environment</h2>
+<p>You are going to use <strong>notebooks</strong> to develop your Python code and create machine learning models. This type of file is a common tool for data scientists, and they can be identified by their suffix or extension <code>.ipynb</code>.</p>
+<p>Notebooks are an interactive environment that allow the developer to both code and add notes and write documentation around the code which is quite helpful for experimental or research-oriented projects.</p>
+<section id="exercise---work-with-a-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="exercise---work-with-a-notebook">Exercise - work with a notebook</h3>
+<p>In this folder, you will find the file <em>notebook.ipynb</em>.</p>
+<ol type="1">
+<li><p>Open <em>notebook.ipynb</em> in Visual Studio Code.</p>
+<p>A Jupyter server will start with Python 3+ started. You will find areas of the notebook that can be <code>run</code>, pieces of code. You can run a code block, by selecting the icon that looks like a play button.</p></li>
+<li><p>Select the <code>md</code> icon and add a bit of markdown, and the following text <strong># Welcome to your notebook</strong>.</p>
+<p>Next, add some Python code.</p></li>
+<li><p>Type <strong>print(‘hello notebook’)</strong> in the code block.</p></li>
+<li><p>Select the arrow to run the code.</p>
+<p>You should see the printed statement:</p>
+<pre class="output"><code>hello notebook</code></pre></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/notebook.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">VS Code with a notebook open</figcaption>
+</figure>
+</div>
+<p>You can interleaf your code with comments to self-document the notebook.</p>
+<p>✅ Think for a minute how different a web developer’s working environment is versus that of a data scientist.</p>
+</section>
+</section>
+<section id="up-and-running-with-scikit-learn" class="level2">
+<h2 class="anchored" data-anchor-id="up-and-running-with-scikit-learn">Up and running with Scikit-learn</h2>
+<p>Now that Python is set up in your local environment, and you are comfortable with Jupyter notebooks, let’s get equally comfortable with Scikit-learn (pronounce it <code>sci</code> as in <code>science</code>). Scikit-learn provides an <a href="https://scikit-learn.org/stable/modules/classes.html#api-ref">extensive API</a> to help you perform ML tasks.</p>
+<p>According to their <a href="https://scikit-learn.org/stable/getting_started.html">website</a>, “Scikit-learn is an open source machine learning library that supports supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection and evaluation, and many other utilities.”</p>
+<p>In this course, you will use Scikit-learn and other tools to build machine learning models to perform what we call ‘traditional machine learning’ tasks. We have deliberately avoided neural networks and deep learning, as they are better covered in our forthcoming ‘AI for Beginners’ curriculum.</p>
+<p>Scikit-learn makes it straightforward to build models and evaluate them for use. It is primarily focused on using numeric data and contains several ready-made datasets for use as learning tools. It also includes pre-built models for students to try. Let’s explore the process of loading prepackaged data and using a built in estimator first ML model with Scikit-learn with some basic data.</p>
+</section>
+<section id="exercise---your-first-scikit-learn-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="exercise---your-first-scikit-learn-notebook">Exercise - your first Scikit-learn notebook</h2>
+<blockquote class="blockquote">
+<p>This tutorial was inspired by the <a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py">linear regression example</a> on Scikit-learn’s web site.</p>
+</blockquote>
+<p>In the <em>notebook.ipynb</em> file associated to this lesson, clear out all the cells by pressing the ‘trash can’ icon.</p>
+<p>In this section, you will work with a small dataset about diabetes that is built into Scikit-learn for learning purposes. Imagine that you wanted to test a treatment for diabetic patients. Machine Learning models might help you determine which patients would respond better to the treatment, based on combinations of variables. Even a very basic regression model, when visualized, might show information about variables that would help you organize your theoretical clinical trials.</p>
+<p>✅ There are many types of regression methods, and which one you pick depends on the answer you’re looking for. If you want to predict the probable height for a person of a given age, you’d use linear regression, as you’re seeking a <strong>numeric value</strong>. If you’re interested in discovering whether a type of cuisine should be considered vegan or not, you’re looking for a <strong>category assignment</strong> so you would use logistic regression. You’ll learn more about logistic regression later. Think a bit about some questions you can ask of data, and which of these methods would be more appropriate.</p>
+<p>Let’s get started on this task.</p>
+<section id="import-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries">Import libraries</h3>
+<p>For this task we will import some libraries:</p>
+<ul>
+<li><strong>matplotlib</strong>. It’s a useful <a href="https://matplotlib.org/">graphing tool</a> and we will use it to create a line plot.</li>
+<li><strong>numpy</strong>. <a href="https://numpy.org/doc/stable/user/whatisnumpy.html">numpy</a> is a useful library for handling numeric data in Python.</li>
+<li><strong>sklearn</strong>. This is the <a href="https://scikit-learn.org/stable/user_guide.html">Scikit-learn</a> library.</li>
+</ul>
+<p>Import some libraries to help with your tasks.</p>
+<ol type="1">
+<li><p>Add imports by typing the following code:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets, linear_model, model_selection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Above you are importing <code>matplotlib</code>, <code>numpy</code> and you are importing <code>datasets</code>, <code>linear_model</code> and <code>model_selection</code> from <code>sklearn</code>. <code>model_selection</code> is used for splitting data into training and test sets.</p></li>
+</ol>
+</section>
+<section id="the-diabetes-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="the-diabetes-dataset">The diabetes dataset</h3>
+<p>The built-in <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">diabetes dataset</a> includes 442 samples of data around diabetes, with 10 feature variables, some of which include:</p>
+<ul>
+<li>age: age in years</li>
+<li>bmi: body mass index</li>
+<li>bp: average blood pressure</li>
+<li>s1 tc: T-Cells (a type of white blood cells)</li>
+</ul>
+<p>✅ This dataset includes the concept of ‘sex’ as a feature variable important to research around diabetes. Many medical datasets include this type of binary classification. Think a bit about how categorizations such as this might exclude certain parts of a population from treatments.</p>
+<p>Now, load up the X and y data.</p>
+<blockquote class="blockquote">
+<p>🎓 Remember, this is supervised learning, and we need a named ‘y’ target.</p>
+</blockquote>
+<p>In a new code cell, load the diabetes dataset by calling <code>load_diabetes()</code>. The input <code>return_X_y=True</code> signals that <code>X</code> will be a data matrix, and <code>y</code> will be the regression target.</p>
+<ol type="1">
+<li><p>Add some print commands to show the shape of the data matrix and its first element:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> datasets.load_diabetes(return_X_y<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X.shape)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What you are getting back as a response, is a tuple. What you are doing is to assign the two first values of the tuple to <code>X</code> and <code>y</code> respectively. Learn more <a href="https://wikipedia.org/wiki/Tuple">about tuples</a>.</p>
+<p>You can see that this data has 442 items shaped in arrays of 10 elements:</p>
+<pre class="text"><code>(442, 10)
+[ 0.03807591  0.05068012  0.06169621  0.02187235 -0.0442235  -0.03482076
+-0.04340085 -0.00259226  0.01990842 -0.01764613]</code></pre>
+<p>✅ Think a bit about the relationship between the data and the regression target. Linear regression predicts relationships between feature X and target variable y. Can you find the <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">target</a> for the diabetes dataset in the documentation? What is this dataset demonstrating, given that target?</p></li>
+<li><p>Next, select a portion of this dataset to plot by arranging it into a new array using numpy’s <code>newaxis</code> function. We are going to use linear regression to generate a line between values in this data, according to a pattern it determines.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> X[:, np.newaxis, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ At any time, print out the data to check its shape.</p></li>
+<li><p>Now that you have data ready to be plotted, you can see if a machine can help determine a logical split between the numbers in this dataset. To do this, you need to split both the data (X) and the target (y) into test and training sets. Scikit-learn has a straightforward way to do this; you can split your test data at a given point.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> model_selection.train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Now you are ready to train your model! Load up the linear regression model and train it with your X and y training sets using <code>model.fit()</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> linear_model.LinearRegression()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ <code>model.fit()</code> is a function you’ll see in many ML libraries such as TensorFlow</p></li>
+<li><p>Then, create a prediction using test data, using the function <code>predict()</code>. This will be used to draw the line between data groups</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Now it’s time to show the data in a plot. Matplotlib is a very useful tool for this task. Create a scatterplot of all the X and y test data, and use the prediction to draw a line in the most appropriate place, between the model’s data groupings.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test, y_test,  color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.plot(X_test, y_pred, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Scaled BMIs'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Disease Progression'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A Graph Plot Showing Diabetes Progression Against BMI'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<img src="./images/scatterplot.png" class="img-fluid" alt="a scatterplot showing datapoints around diabetes">
+<p>✅ Think a bit about what’s going on here. A straight line is running through many small dots of data, but what is it doing exactly? Can you see how you should be able to use this line to predict where a new, unseen data point should fit in relationship to the plot’s y axis? Try to put into words the practical use of this model.</p></li>
+</ol>
+<p>Congratulations, you built your first linear regression model, created a prediction with it, and displayed it in a plot!</p>
+<hr>
+</section>
+</section>
+<section id="challenge" class="level2">
+<h2 class="anchored" data-anchor-id="challenge">🚀Challenge</h2>
+<p>Plot a different variable from this dataset. Hint: edit this line: <code>X = X[:, np.newaxis, 2]</code>. Given this dataset’s target, what are you able to discover about the progression of diabetes as a disease? ## <a href="https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/10/">Post-lecture quiz</a></p>
+</section>
+<section id="review-self-study" class="level2">
+<h2 class="anchored" data-anchor-id="review-self-study">Review &amp; Self Study</h2>
+<p>In this tutorial, you worked with simple linear regression, rather than univariate or multiple linear regression. Read a little about the differences between these methods, or take a look at <a href="https://www.coursera.org/lecture/quantifying-relationships-regression-models/linear-vs-nonlinear-categorical-variables-ai2Ef">this video</a></p>
+<p>Read more about the concept of regression and think about what kinds of questions can be answered by this technique. Take this <a href="https://docs.microsoft.com/learn/modules/train-evaluate-regression-models?WT.mc_id=academic-77952-leestott">tutorial</a> to deepen your understanding.</p>
+</section>
+<section id="assignment" class="level2">
+<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<p><a href="assignment.md">A different dataset</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
